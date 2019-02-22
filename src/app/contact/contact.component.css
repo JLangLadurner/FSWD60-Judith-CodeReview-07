@@ -1,0 +1,16 @@
+.radiobuttons label{
+	margin-right: 15px;
+}
+.radiobuttons p{
+	font-weight: bold;
+}
+.btn{
+	font-size: 1.25em;
+	margin-top: 25px;
+}
+
+.jumbotron{
+	background: none;
+	margin-top: 50px;
+	text-align: center;
+}

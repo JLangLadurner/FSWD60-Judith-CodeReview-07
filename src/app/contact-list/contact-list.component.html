@@ -1,0 +1,22 @@
+<table class="table table-sm">
+        <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Category</th>
+        </thead>
+        <ng-container *ngFor="let contact of contactArray">
+                <tr class="table-dark">
+                        <td>{{contact.firstName}}</td>
+                        <td>{{contact.lastName}}</td>
+                        <td>{{contact.email}}</td>
+                        <td>{{contact.phoneNum}}</td>
+                        <td>{{contact.category}}</td>
+                        <td>
+                                <button class="btn btn"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn"><i class="fas fa-ban"></i></button>
+                        </td>
+                </tr>
+        </ng-container>
+</table>

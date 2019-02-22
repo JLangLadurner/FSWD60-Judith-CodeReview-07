@@ -1,0 +1,57 @@
+<div class="row">
+        <div class="col-md-3">
+        	  <form [formGroup]="this.contactService.form" (ngSubmit)="onSubmit()">
+                        <input type="hidden" formControlName="$key">
+
+                        <div class="form-group">
+                                <label>First Name</label>
+                                <input formControlName="firstName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.firstName.errors}">
+                                  <div class="invalid-feedback" *ngIf="submitted && formControls.firstName.errors">This field is required</div>
+                        </div>
+                        <div class="form-group">
+                                <label>Last Name</label>
+                                <input formControlName="lastName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                                <label>Email</label>
+                                <input formControlName="email" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.email.errors}">
+                                <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">invalid email address ..</div>
+                        </div>
+                        <!-- phone num input -->
+                        <div class="form-group">
+                                <label>Phone Number</label>
+                                <input formControlName="phoneNum" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.phoneNum.errors}">
+                                <div class="invalid-feedback" *ngIf="submitted && formControls.mobile.errors">
+                                        <label *ngIf="formControls.phoneNum.errors.required">This field is required</label>
+                                        <label *ngIf="formControls.phoneNum.errors.minlength">at least 8 numbers</label>
+                                    </div>
+                        </div>
+
+                        <!-- adds category radio buttons -->
+     
+                        <div class="radiobuttons" ng-app="app" ng-controller="RadioController">
+                                <p>Select Category</p><br>
+                        <label><input type="radio" formControlName="category" value="private"> Private</label>
+                        <label><input type="radio" formControlName="category" value="business">Business </label>
+                        </div>
+
+
+						<!-- submit button -->
+
+                        <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Create">
+                
+        				</div>
+
+        				<!-- success message upon submitting the form -->
+        				<div class="alert alert-info" *ngIf="showSuccessMessage">submitted successfully</div>
+
+        			</form>
+        		
+        		</div>
+
+       <!-- contact list columns start -->
+        <div class="col-md-8 col-md-offset-1">
+                <contact-list></contact-list>
+        </div>
+</div>
