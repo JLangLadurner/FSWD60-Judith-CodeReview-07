@@ -6,17 +6,19 @@
                 <th>Phone Number</th>
                 <th>Category</th>
         </thead>
-        <ng-container *ngFor="let contact of contactArray">
+        <ng-container *ngFor="let contacts of contactArray">
                 <tr class="table-dark">
-                        <td>{{contact.firstName}}</td>
-                        <td>{{contact.lastName}}</td>
-                        <td>{{contact.email}}</td>
-                        <td>{{contact.phoneNum}}</td>
-                        <td>{{contact.category}}</td>
+                        <td>{{contacts.firstName}}</td>
+                        <td>{{contacts.lastName}}</td>
+                        <td>{{contacts.email}}</td>
+                        <td>{{contacts.phoneNum}}</td>
+                        <td>{{contacts.category}}</td>
                         <td>
-                                <button class="btn btn"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn"><i class="fas fa-ban"></i></button>
+                                <button class="btn btn"><i class="fas fa-edit" (click)="contactService.populateForm(contacts)"></i></button>
+                                <button class="btn btn"><i class="fas fa-ban" (click)="onDelete(contacts.$key)"></i></button>
                         </td>
                 </tr>
+               
         </ng-container>
+         <div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>
 </table>

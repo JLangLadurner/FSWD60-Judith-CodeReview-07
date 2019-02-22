@@ -8,6 +8,7 @@ import { ContactService } from "../shared/contact.service";
 })
 export class ContactListComponent implements OnInit {
 	contactArray = [];
+  showDeletedMessage: boolean;
 
   constructor(public contactService: ContactService) { }
 
@@ -22,5 +23,13 @@ export class ContactListComponent implements OnInit {
                         })
                  });
   }
+
+  onDelete($key){
+     if(confirm("Are you sure you want to delete this record?")){
+       this.contactService.deleteContact($key);
+        this.showDeletedMessage = true;
+        setTimeout(()=>this.showDeletedMessage=false , 3000)
+       }
+   }
 
 }
