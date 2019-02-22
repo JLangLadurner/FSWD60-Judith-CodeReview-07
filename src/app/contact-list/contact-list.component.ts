@@ -9,6 +9,8 @@ import { ContactService } from "../shared/contact.service";
 export class ContactListComponent implements OnInit {
 	contactArray = [];
   showDeletedMessage: boolean;
+  searchText:string="";
+
 
   constructor(public contactService: ContactService) { }
 
@@ -31,5 +33,16 @@ export class ContactListComponent implements OnInit {
         setTimeout(()=>this.showDeletedMessage=false , 3000)
        }
    }
+   filterCondition(contacts){
+   return contacts.lastName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1 ||
+          contacts.category.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
 
-}
+ }
+
+   
+
+   
+     
+      
+    }
+

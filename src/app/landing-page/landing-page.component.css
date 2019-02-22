@@ -1,0 +1,29 @@
+ul {
+	list-style-type: none;
+	margin: 50px 0px;
+}
+li {
+	font-size: 20px;
+
+}
+
+i {
+	color: #19CFD5;
+	font-size: 1.2em;
+	list-style-type: none;
+	margin-right: 10px;
+}
+
+.b {
+	background-color: white;
+	opacity: 0.7;
+	width: 520px;
+	padding: 40px 0px;
+	border-radius: 5%;
+}
+
+.field {
+	width:  40%;
+	padding: 30px 0px;
+
+}

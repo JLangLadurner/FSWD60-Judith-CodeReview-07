@@ -1,0 +1,7 @@
+.container {
+	/* height: 500px; */
+	background-image: url('../assets/img/NY.jpg');
+	opacity: .9;
+	width: 1200px;
+	height:  0 auto;
+}

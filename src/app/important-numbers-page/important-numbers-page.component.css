@@ -1,0 +1,27 @@
+.tab {
+	width: 80%;
+}
+
+.h {
+	background-color: black;
+	color: #19CFD5;
+}
+
+td {
+	color: black;
+}
+
+table {
+	padding: 40px 0px;
+	margin: 80px 0px; 
+
+}
+
+.fa-star {
+	color: gold;
+}
+
+h4 {
+	font-size: 25px;
+	color: black;
+}

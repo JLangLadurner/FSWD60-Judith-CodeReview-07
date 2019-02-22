@@ -1,16 +1,26 @@
-.radiobuttons label{
-	margin-right: 15px;
-}
+
 .radiobuttons p{
 	font-weight: bold;
 }
 .btn{
-	font-size: 1.25em;
+	font-size: 1em;
 	margin-top: 25px;
+	background-color: #19CFD5;
+	border-radius: 10%;
 }
 
-.jumbotron{
-	background: none;
-	margin-top: 50px;
-	text-align: center;
+
+.form-inline input{
+	font-size: 1.25em;
 }
+
+.bg {
+	background-color: white;
+	margin: 30px 40px;
+	border-radius: 5%;
+}
+
+.tp {
+	margin-top: 10px;
+}
+

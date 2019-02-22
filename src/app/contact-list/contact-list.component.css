@@ -1,3 +1,17 @@
-.form-inline input{
-	font-size: 1.25em;
+.wha{
+	margin-bottom: 50px;
+	display: flex;
+	margin-left: 180px;
 }
+
+.f {
+	background-color: white;
+	color: black;
+}
+
+thead {
+	font-size: 14px;
+	background-color: black;
+	color:  #19CFD5;
+}
+
