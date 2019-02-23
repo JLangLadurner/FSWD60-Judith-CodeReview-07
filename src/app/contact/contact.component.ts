@@ -9,13 +9,12 @@ import { ContactService } from "../shared/contact.service";
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private contactService:ContactService) { }
+  constructor(public contactService:ContactService) { }
   submitted:boolean;
   formControls = this.contactService.form.controls;
   showSuccessMessage: boolean;
 
-  ngOnInit() {
-  }
+  
 
   onSubmit(){
 
@@ -34,3 +33,7 @@ export class ContactComponent implements OnInit {
 		 }
   		}
 }
+
+ngOnInit() {
+  }
+  }
