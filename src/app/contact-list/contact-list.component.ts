@@ -12,7 +12,8 @@ export class ContactListComponent implements OnInit {
   searchText:string="";
 
 
-  constructor(public contactService: ContactService) { }
+
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
   	this.contactService.getContact().subscribe(
@@ -23,7 +24,7 @@ export class ContactListComponent implements OnInit {
                                         ...item.payload.val()
                                 }
                         })
-                 });
+                 });;
   }
 
   onDelete($key){
@@ -33,13 +34,15 @@ export class ContactListComponent implements OnInit {
         setTimeout(()=>this.showDeletedMessage=false , 3000)
        }
    }
-   filterCondition(contacts){
-   return contacts.lastName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1 ||
-          contacts.category.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
+   filterCondition(contact){
+   return contact.lastName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1 || contact.category.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
+          
 
  }
 
-   
+   categoryCondition(contact){
+     return contact.category == 'private' ? 'green':'blue';
+   }
 
    
      

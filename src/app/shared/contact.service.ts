@@ -21,7 +21,7 @@ export class ContactService {
 	         });
 
 	  	 getContact(){
-                 this.contactList = this.firebase.list('contacts');
+                 this.contactList = this.firebase.list('contact');
                  return this.contactList.snapshotChanges();
          }
          insertContact(contactList){
@@ -34,17 +34,17 @@ export class ContactService {
                   });
          }
 
-         populateForm(contacts){
-                this.form.setValue(contacts);
+         populateForm(contact){
+                this.form.setValue(contact);
         }
 
-        updateContact(contacts){
-          this.contactList.update(contacts.$key,{
-            firstName:contacts.firstName,
-            lastName:contacts.lastName,
-            email: contacts.email,
-            phoneNum: contacts.phoneNum,
-            category: contacts.category
+        updateContact(contact){
+          this.contactList.update(contact.$key,{
+            firstName:contact.firstName,
+            lastName:contact.lastName,
+            email: contact.email,
+            phoneNum: contact.phoneNum,
+            category: contact.category
           });
         }
 

@@ -23,7 +23,7 @@
                         <div class="form-group">
                                 <label>Phone Number</label>
                                 <input formControlName="phoneNum" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.phoneNum.errors}">
-                                <div class="invalid-feedback" *ngIf="submitted && formControls.mobile.errors">
+                                <div class="invalid-feedback" *ngIf="submitted && formControls.phoneNum.errors">
                                         <label *ngIf="formControls.phoneNum.errors.required">This field is required</label>
                                         <label *ngIf="formControls.phoneNum.errors.minlength">at least 8 numbers</label>
                                     </div>
@@ -33,8 +33,8 @@
      
                         <div  ng-app="app" ng-controller="RadioController">
                                 <p>Select Category</p><br>
-                        <label class="rabtn"><input type="radio" formControlName="category" value="private">&nbsp;&nbsp;private</label>
-                        <label class="rabtn"><input type="radio" formControlName="category" value="business">&nbsp;&nbsp;business</label>
+                        <label class="rabtn"><input type="radio" formControlName="category" value="private">&nbsp;&nbsp;private&nbsp;&nbsp;</label>
+                        <label class="rabtn"><input type="radio" formControlName="category" value="business">&nbsp;&nbsp;business&nbsp;&nbsp;</label>
                         </div>
 
 

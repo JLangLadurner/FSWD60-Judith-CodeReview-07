@@ -20,23 +20,24 @@
                 <th>Action</th>
         </thead>
       
-        <ng-container *ngFor="let contacts of contactArray">
-              <tbody>
-                <tr class="table table-striped" *ngIf="filterCondition(contacts)">
-                        <td>{{contacts.firstName}}</td>
-                        <td>{{contacts.lastName}}</td>
-                        <td>{{contacts.email}}</td>
-                        <td>{{contacts.phoneNum}}</td>
-                        <td><b>{{contacts.category}}</b></td>
+        <ng-container *ngFor="let contact of contactArray">
+          
+                <tr class="table table-striped"  *ngIf="filterCondition(contact)">
+                        <td>{{contact.firstName}}</td>
+                        <td>{{contact.lastName}}</td>
+                        <td>{{contact.email}}</td>
+                        <td>{{contact.phoneNum}}</td>
+                        <td [ngStyle]="{color:categoryCondition(contact)}">{{contact.category}}</td>
                         <td>
-                                <button class="btn btn-info"><i class="fas fa-edit" (click)="contactService.populateForm(contacts)"></i></button>
-                                <button class="btn btn-danger"><i class="fas fa-ban" (click)="onDelete(contacts.$key)"></i></button>
+                                <button class="btn btn-info"><i class="fas fa-edit" (click)="contactService.populateForm(contact)"></i></button>
+                                <button class="btn btn-danger"><i class="fas fa-ban" (click)="onDelete(contact.$key)"></i></button>
                         </td>
                 </tr>
-            </tbody>
-               
+        
+             
         </ng-container>
-         <div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>
+         
 </table>
+<div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>  
 
 
