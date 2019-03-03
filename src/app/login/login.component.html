@@ -1,0 +1,14 @@
+<div id="login-container">
+	<div id="login_box" class="d-flex flex-column">
+		<div class="d-flex flex-column align-items-center my-auto">
+			<!--Authentication starts here with fetsching the data from the form (email and password)-->
+			<input type="text" [(ngModel)]="email" placeholder="email">
+			<input type="password" [(ngModel)]='password' placeholder="password">
+			<!--With click on login the two fields are passed to the login function inside auth.service.ts -->
+			<button (click)='login()' [disabled]="!email || !password">Login</button>
+			
+		</div>
+		
+	</div>
+	
+</div>

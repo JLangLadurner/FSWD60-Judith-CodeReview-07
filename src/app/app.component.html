@@ -2,8 +2,17 @@
 <div class="container">
 <heady></heady>
 	<app-navbar></app-navbar>
+
+	<!--Blocking the user from seeing anything if not logged in -->
+	<div *ngIf="(authService.user) | async; else show_login">
+
+			<router-outlet></router-outlet>
+		
+	</div>
 	
-		<router-outlet></router-outlet>
+	
+
+	<ng-template #show_login><login></login></ng-template>
 		
 
   

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { FormControl , FormGroup, Validators } from "@angular/forms";
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 
+declare var $:any;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -51,4 +53,20 @@ export class ContactService {
         deleteContact($key:string){
           this.contactList.remove($key);
         }
+
+        toggleForm(check=false) {
+          if (check) {
+            if($('#contact-form-container').is('visible')) {
+              //do nothing if container is visible
+            }else{
+              $('#contact-form-container').toggle();
+            }
+          }else{
+            $('contact-form-container').toggle();
+          }
+        }
+        /*THIS will be called from Contact form Html inside on the submit function
+        signup(){
+        ...
+        }*/
 }

@@ -13,6 +13,7 @@
            <ul class="nav navbar-nav">
                <li ><a routerLink="/important-numbers-page" title="Important">Important Numbers</a></li>
                <li><a routerLink="/contact" title="Contact">Contact List</a></li>
+               <button class="btn btn-outline-warning" (click)="logout()" *ngIf="authService.user | async">Logout</button>
            </ul>
        </div>
    </div>
