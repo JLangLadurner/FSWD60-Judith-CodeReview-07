@@ -1,0 +1,24 @@
+#login_box{
+	width: 80%;
+	margin-top: 3%;
+
+}
+
+#login-container {
+	display: flex;
+	flex-direction: column;
+	width: 1170px;
+	height:  400px;
+
+}
+
+.center {
+	width: 40%;
+	margin-left: 40%;
+	margin-top: 10%;
+}
+
+p {
+	
+	font-size: 20px;
+}

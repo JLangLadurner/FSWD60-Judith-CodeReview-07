@@ -4,7 +4,7 @@
 	<app-navbar></app-navbar>
 
 	<!--Blocking the user from seeing anything if not logged in -->
-	<div *ngIf="(authService.user) | async; else show_login">
+	<div id="loginBG" *ngIf="(authService.user) | async; else show_login">
 
 			<router-outlet></router-outlet>
 		
